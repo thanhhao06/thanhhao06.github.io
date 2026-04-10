@@ -1,15 +1,11 @@
----
-author:
-  - Azaki
+author: Azaki
 source: https://app.letsdefend.io/training/lessons/network-fundamentals
 published: archived
 created: 2026-04-02
 description: Mỗi chuyên viên phân tích SOC cần hiểu cách thức hoạt động của mạng. Với kiến ​​thức cơ bản vững chắc này, các vấn đề kỹ thuật khác sẽ dễ hiểu hơn.
-tags:
-  - Theory
-  - Network
----
+tags: Theory, Network
 
+---
 # Giới thiệu về các nguyên lý cơ bản của mạng máy tính
 
 ## Mạng máy tính là gì?
