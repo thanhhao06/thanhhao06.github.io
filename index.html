@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azaki - Home</title>
+  <link rel="stylesheet" href="style.css?v=12" />
+</head>
+<body data-page="home">
+  <header class="navbar">
+  <a href="./" class="logo">Azaki</a>
+  <nav>
+    <a href="./" class="active">HOME</a>
+    <a href="./blog/">BLOG</a>
+    <a href="./project/">PROJECT</a>
+    <a href="./skill/">SKILL</a>
+  </nav>
+  <a href="./contact/" class="navbar-cta">CONTACT</a>
+</header>
+
+  <main class="landing-page">
+    <section class="landing-hero" id="home">
+      <div class="landing-grid">
+        <div class="landing-copy glass-panel">
+          <p class="eyebrow">WELCOME</p>
+          <h1>Cyber Security</h1>
+          <p class="landing-desc">
+            Mình tập trung vào CTF, Forensic security và thực hành các kỹ năng blue team trong môi trường lab.
+            Trang này là nơi mình lưu lại project, write-up và những kỹ năng đang phát triển mỗi ngày.
+          </p>
+
+          <div class="landing-tags">
+            <a href="blog/">Blog</a>
+            <a href="project/">Project</a>
+            <a href="skill/">Skill</a>
+            <a href="contact/">Contact</a>
+          </div>
+        </div>
+
+        <div class="landing-media">
+          <div class="video-card">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="bg/bg.png"
+            >
+              <source src="assets/intro.mp4" type="video/mp4" />
+            </video>
+            <div class="video-overlay"></div>
+          </div>
+          <div class="landing-stats">
+            <div class="stat-card">
+              <span class="stat-value" id="blogCount">3+</span>
+              <span class="stat-label">Blog</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="projectCount">1+</span>
+              <span class="stat-label">Project</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="experienceCount">200+</span>
+              <span class="stat-label">SOLVED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-preview" id="about-preview">
+      <div class="section-heading">
+        <h2>About me</h2>
+        <p>Even the greatest heroes are forgotten someday</p>
+      </div>
+
+      <div class="about-preview-grid">
+        <div class="about-preview-card glass-panel">
+          <h3>Hello I'm Azaki</h3>
+          <p>
+            Mình là sinh viên theo đuổi định hướng Cybersecurity, yêu thích các chủ đề như Digital Forensic,
+            Reverse Engineering và SOC Analyst. Ngoài việc học trên trường, mình thường tự xây lab,
+            làm CTF và ghi chú lại quá trình học để biến kiến thức thành các bài viết dễ xem, dễ ôn lại.
+          </p>
+        </div>
+
+        <div class="about-avatar-slot">
+          <img src="assets/avatar.png" alt="Avatar Azaki" class="about-avatar" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js?v=13"></script>
+</body>
+</html>
