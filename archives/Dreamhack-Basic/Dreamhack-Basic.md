@@ -211,7 +211,7 @@ Giải nén  với mật khẩu mình được
 
 ![[Pasted image 20260409103518.png]]
 
->Flag: `DH{{My_n@me_h@#NAMM}`
+>Flag: `DH{My_n@me_h@#NAMM}`
 
 ---
 
