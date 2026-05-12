@@ -43,27 +43,10 @@ function rawFileUrl(path) {
   return `https://raw.githubusercontent.com/${SITE_CONFIG.owner}/${SITE_CONFIG.repo}/${encodeURIComponent(SITE_CONFIG.branch)}/${encodePath(path)}`;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
 function githubReposApiUrl() {
   return `https://api.github.com/users/${SITE_CONFIG.owner}/repos?type=owner&sort=updated&direction=desc&per_page=100`;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
 function escapeHtml(text) {
   return String(text)
     .replace(/&/g, "&amp;")
@@ -381,30 +364,8 @@ async function getBlogCount() {
 
 async function getProjectCount() {
   try {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 3a7d2fa (Initial commit)
     const repos = await listGitHubRepos();
     return repos.length;
-=======
-    const html = await fetchLocalText("project/index.html");
-    const projectCards = (html.match(/class=["'][^"']*project-card[^"']*["']/gi) || []).length;
-    if (projectCards > 0) {
-      return projectCards;
-    }
-
-    const sections = (html.match(/class=["'][^"']*card-section[^"']*["']/gi) || []).length;
-    return sections > 0 ? sections : 0;
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-<<<<<<< HEAD
-=======
-=======
-    const repos = await listGitHubRepos();
-    return repos.length;
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
   } catch (error) {
     console.error("getProjectCount error:", error);
     return 0;
@@ -1101,13 +1062,6 @@ function initPaginatedGrid(container, pagination, pageSize) {
   renderPage(1);
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
 
 function getReposCacheKey() {
   return `${SITE_CONFIG.apiCachePrefix}github-repos:${SITE_CONFIG.owner}`;
@@ -1255,16 +1209,6 @@ async function loadProjectPage() {
   }
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
 async function loadNotePage() {
   const noteContent = document.getElementById("noteContent");
   const noteTitle = document.getElementById("noteTitle");
@@ -1433,20 +1377,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ...document.querySelectorAll(".card-section"),
     ...document.querySelectorAll(".background-card"),
     ...document.querySelectorAll(".message-card"),
-<<<<<<< HEAD
-<<<<<<< HEAD
     ...document.querySelectorAll(".project-card"),
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
-<<<<<<< HEAD
-    ...document.querySelectorAll(".project-card"),
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
-    ...document.querySelectorAll(".project-card"),
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
     ...document.querySelectorAll(".bg-card")
   ];
 
@@ -1489,27 +1420,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (document.getElementById("backgroundGrid")) {
     loadBackgroundPage();
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
 
   if (document.getElementById("projectRepoGrid")) {
     loadProjectPage();
   }
-<<<<<<< HEAD
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 73a9da3608607d5f6ab94f8462cfab9c62805c77
-=======
->>>>>>> 02443ea (Initial commit)
->>>>>>> 3a7d2fa (Initial commit)
 });
 
 function slugifyHeading(text) {
