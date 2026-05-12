@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azaki - Skill</title>
+  <link rel="stylesheet" href="../style.css?v=12" />
+</head>
+<body data-page="skill">
+  <header class="navbar">
+    <a href="../" class="logo">Azaki</a>
+    <nav>
+      <a href="../">HOME</a>
+      <a href="../blog/">BLOG</a>
+      <a href="../project/">PROJECT</a>
+      <a href="../skill/" class="active">SKILL</a>
+    </nav>
+    <a href="../contact/" class="navbar-cta">CONTACT</a>
+  </header>
+
+  <main class="page-content">
+  <section class="skill-page">
+    <div class="glass-box skill-hero-box">
+      <h1>Skill</h1>
+      <p>Nơi để hiển thị kỹ năng và công cụ</p>
+    </div>
+
+    <div class="skill-tabs-wrapper">
+      <div class="skill-tabs skill-tabs-pill container" role="tablist" aria-label="Skill và Tools">
+        <input class="skill-tab-input" type="radio" id="radio-1" name="skill-tabs" data-tab="skill" checked>
+        <label
+          class="tab skill-tab-btn"
+          for="radio-1"
+          role="tab"
+          aria-selected="true"
+          data-tab="skill"
+        >
+          Skill
+        </label>
+
+        <input class="skill-tab-input" type="radio" id="radio-2" name="skill-tabs" data-tab="tools">
+        <label
+          class="tab skill-tab-btn"
+          for="radio-2"
+          role="tab"
+          aria-selected="false"
+          data-tab="tools"
+        >
+          Tools
+        </label>
+
+        <span class="glider" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <div class="skill-panels">
+      <div class="skill-panel active" data-tab-panel="skill">
+        <div class="skill-box-grid paginated-grid" data-page-size="6">
+          <div class="skill-box">Log Analysis &amp; Alert Triage</div>
+          <div class="skill-box">Incident Response</div>
+          <div class="skill-box">Networking</div>
+          <div class="skill-box">Disk Imaging</div>
+          <div class="skill-box">Memory Analyst</div>
+          <div class="skill-box">Data Carving</div>
+          <div class="skill-box">Malware Analysis</div>
+          <div class="skill-box">Operating Systems</div>
+        </div>
+        <nav class="archive-pagination skill-pagination" data-pagination-for="skill" aria-label="Phân trang skill"></nav>
+      </div>
+
+      <div class="skill-panel" data-tab-panel="tools" hidden>
+        <div class="tool-grid paginated-grid" data-page-size="8">
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/wireshark.png" alt="Wireshark logo" class="tool-logo" />
+            <span>Wireshark</span>
+          </button>
+
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/hxd.png" alt="Hexdump logo" class="tool-logo" />
+            <span>HxD</span>
+          </button>
+
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/ftk-imager.png" alt="FTK Imager logo" class="tool-logo" />
+            <span>FTK Imager</span>
+          </button>
+
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/volatility.png" alt="Volatility logo" class="tool-logo" />
+            <span>Volatility</span>
+          </button>
+
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/john-the-ripper.png" alt="John the Ripper logo" class="tool-logo" />
+            <span>John the Ripper</span>
+          </button>
+
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/ida.png" alt="IDA logo" class="tool-logo" />
+            <span>IDA</span>
+          </button>
+
+          <button class="tool-tile" type="button">
+            <img src="../assets/logo/burp-suite.png" alt="Burp Suite logo" class="tool-logo" />
+            <span>Burp Suite</span>
+          </button>
+        </div>
+        <nav class="archive-pagination skill-pagination" data-pagination-for="tools" aria-label="Phân trang tools"></nav>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <script src="../app.js?v=12"></script>
+</body>
+</html>
