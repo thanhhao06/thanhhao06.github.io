@@ -390,8 +390,245 @@ function extractTitleFromMarkdown(fileName, markdown) {
   return fileNameToTitle(fileName);
 }
 
+function parseArchiveDateValue(value) {
+  const raw = String(value || "").trim().replace(/^['"]|['"]$/g, "");
+  if (!raw) return null;
+
+  const isoMatch = raw.match(/^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/);
+  if (isoMatch) {
+    const year = Number(isoMatch[1]);
+    const month = Number(isoMatch[2]);
+    const day = Number(isoMatch[3]);
+    return {
+      value: Date.UTC(year, month - 1, day),
+      label: `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
+    };
+  }
+
+  const viMatch = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (viMatch) {
+    const day = Number(viMatch[1]);
+    const month = Number(viMatch[2]);
+    const year = Number(viMatch[3]);
+    return {
+      value: Date.UTC(year, month - 1, day),
+      label: `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
+    };
+  }
+
+  return null;
+}
+
+function getArchiveMetadataBlock(markdown) {
+  const text = String(markdown || "").replace(/\r\n/g, "\n");
+  const frontmatter = text.match(/^---\s*\n([\s\S]*?)\n---/);
+  if (frontmatter) return frontmatter[1];
+
+  const lines = text.split("\n");
+  const metadataLines = [];
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      if (metadataLines.length > 0) break;
+      continue;
+    }
+
+    if (/^[A-Za-z][A-Za-z0-9_-]*\s*:/.test(trimmed)) {
+      metadataLines.push(trimmed);
+      continue;
+    }
+
+    if (/^-\s+/.test(trimmed) && metadataLines.length > 0) {
+      metadataLines.push(trimmed);
+      continue;
+    }
+
+    break;
+  }
+
+  return metadataLines.join("\n");
+}
+
+function stripArchiveMetadata(markdown) {
+  const text = String(markdown || "").replace(/\r\n/g, "\n");
+  const frontmatter = text.match(/^---\s*\n[\s\S]*?\n---\s*\n?/);
+  if (frontmatter) return text.slice(frontmatter[0].length);
+
+  const lines = text.split("\n");
+  let index = 0;
+  let foundMetadata = false;
+
+  while (index < lines.length) {
+    const trimmed = lines[index].trim();
+
+    if (!trimmed) {
+      if (foundMetadata) {
+        index += 1;
+        break;
+      }
+      index += 1;
+      continue;
+    }
+
+    if (/^[A-Za-z][A-Za-z0-9_-]*\s*:/.test(trimmed) || (/^-\s+/.test(trimmed) && foundMetadata)) {
+      foundMetadata = true;
+      index += 1;
+      continue;
+    }
+
+    break;
+  }
+
+  return foundMetadata ? lines.slice(index).join("\n") : text;
+}
+
+function extractArchiveDateFromMarkdown(markdown) {
+  const metadata = getArchiveMetadataBlock(markdown);
+  if (!metadata) return null;
+
+  const keys = ["created", "date", "updated", "published"];
+  for (const key of keys) {
+    const match = metadata.match(new RegExp(`^\\s*${key}\\s*:\\s*(.+?)\\s*$`, "im"));
+    if (!match) continue;
+
+    const parsed = parseArchiveDateValue(match[1]);
+    if (parsed) return parsed;
+  }
+
+  return null;
+}
+
+function cleanArchiveMetadataValue(value) {
+  return String(value || "")
+    .trim()
+    .replace(/^['"]|['"]$/g, "")
+    .trim();
+}
+
+function pushArchiveMetadataValue(fields, key, value) {
+  const normalizedKey = String(key || "").trim().toLowerCase();
+  const raw = cleanArchiveMetadataValue(value);
+  if (!normalizedKey || !raw) return;
+
+  if (!fields[normalizedKey]) {
+    fields[normalizedKey] = [];
+  }
+
+  if (/^\[.*\]$/.test(raw)) {
+    raw
+      .slice(1, -1)
+      .split(",")
+      .map(cleanArchiveMetadataValue)
+      .filter(Boolean)
+      .forEach((item) => fields[normalizedKey].push(item));
+    return;
+  }
+
+  fields[normalizedKey].push(raw);
+}
+
+function readArchiveMetadataFields(markdown) {
+  const metadata = getArchiveMetadataBlock(markdown);
+  const fields = {};
+  if (!metadata) return fields;
+
+  let currentKey = "";
+
+  metadata.split(/\r?\n/).forEach((line) => {
+    const keyMatch = line.match(/^\s*([A-Za-z][A-Za-z0-9_-]*)\s*:\s*(.*?)\s*$/);
+    if (keyMatch) {
+      currentKey = keyMatch[1].toLowerCase();
+      pushArchiveMetadataValue(fields, currentKey, keyMatch[2]);
+      return;
+    }
+
+    const listMatch = line.match(/^\s*-\s*(.+?)\s*$/);
+    if (listMatch && currentKey) {
+      pushArchiveMetadataValue(fields, currentKey, listMatch[1]);
+    }
+  });
+
+  return fields;
+}
+
+function extractArchiveMetadata(markdown, filePath = "") {
+  const fields = readArchiveMetadataFields(markdown);
+  const dateInfo = extractArchiveDateFromMarkdown(markdown) || inferArchiveDateFromPath(filePath);
+  const author = (fields.author || []).join(", ") || "Azaki";
+  const tags = (fields.tags || fields.tag || [])
+    .flatMap((tag) => String(tag).split(","))
+    .map(cleanArchiveMetadataValue)
+    .filter(Boolean);
+
+  return {
+    author,
+    created: dateInfo ? dateInfo.label : "",
+    dateValue: dateInfo ? dateInfo.value : 0,
+    tags: [...new Set(tags)]
+  };
+}
+
+function renderArchiveMetadata(metadata) {
+  const parts = [];
+
+  if (metadata.author) {
+    parts.push(`<span class="note-meta-item">author: ${escapeHtml(metadata.author)}</span>`);
+  }
+
+  if (metadata.created) {
+    parts.push(`<span class="note-meta-item">date: ${escapeHtml(metadata.created)}</span>`);
+  }
+
+  const tagHtml = metadata.tags.map((tag) => `<span class="note-tag">${escapeHtml(tag)}</span>`).join("");
+  if (tagHtml) {
+    parts.push(`<span class="note-meta-tags"><span class="note-meta-label">tag:</span>${tagHtml}</span>`);
+  }
+
+  return parts.join("");
+}
+
+function renderArchiveCardMetadata(metadata) {
+  const parts = [];
+
+  if (metadata.author) {
+    parts.push(`<span class="archive-meta-item">author: ${escapeHtml(metadata.author)}</span>`);
+  }
+
+  if (metadata.created) {
+    parts.push(`<span class="archive-meta-item">date: ${escapeHtml(metadata.created)}</span>`);
+  }
+
+  const tagHtml = metadata.tags.map((tag) => `<span class="archive-tag">${escapeHtml(tag)}</span>`).join("");
+  if (tagHtml) {
+    parts.push(`<span class="archive-meta-tags"><span class="archive-meta-label">tag:</span>${tagHtml}</span>`);
+  }
+
+  return parts.length ? `<div class="archive-meta">${parts.join("")}</div>` : "";
+}
+
+function inferArchiveDateFromPath(path) {
+  const text = String(path || "");
+  const dateMatch = text.match(/(?:^|[^\d])(\d{4})[-_ ]?(\d{2})[-_ ]?(\d{2})(?:[^\d]|$)/);
+  if (dateMatch) {
+    return parseArchiveDateValue(`${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`);
+  }
+
+  const yearMatch = text.match(/(?:^|[^\d])((?:19|20)\d{2})(?:[^\d]|$)/);
+  if (yearMatch) {
+    const year = Number(yearMatch[1]);
+    return {
+      value: Date.UTC(year, 0, 1),
+      label: String(year)
+    };
+  }
+
+  return null;
+}
+
 function extractDescriptionFromMarkdown(markdown) {
-  const lines = markdown
+  const lines = stripArchiveMetadata(markdown)
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
@@ -899,24 +1136,36 @@ async function loadArchivesPage() {
     const cards = await Promise.all(
       notes.map(async (note) => {
         const title = fileNameToTitle(note.name);
-        let desc = "Bấm để mở bài viết";
+        let metadata = extractArchiveMetadata("", note.path);
 
         try {
           const md = await fetchTextFile(joinPath(SITE_CONFIG.archivesDir, note.path));
-          desc = extractDescriptionFromMarkdown(md);
+          metadata = extractArchiveMetadata(md, note.path);
         } catch (error) {
           console.error("Không đọc được markdown:", note.path, error);
         }
 
-        return `
+        const cardMeta = renderArchiveCardMetadata(metadata);
+
+        return {
+          dateValue: metadata.dateValue,
+          path: note.path,
+          html: `
           <a class="archive-box" href="${noteUrl(note.path)}">
             <h3>${escapeHtml(title)}</h3>
-            <p>${escapeHtml(desc)}</p>
+            ${cardMeta}
             <span class="archive-file">${escapeHtml(note.path)}</span>
           </a>
-        `;
+        `
+        };
       })
     );
+
+    cards.sort((a, b) => {
+      const byDate = b.dateValue - a.dateValue;
+      if (byDate) return byDate;
+      return a.path.localeCompare(b.path, undefined, { sensitivity: "base" });
+    });
 
     const totalPages = Math.max(1, Math.ceil(cards.length / BLOG_PAGE_SIZE));
     let currentPage = getArchivePageFromUrl();
@@ -931,7 +1180,7 @@ async function loadArchivesPage() {
       const start = (page - 1) * BLOG_PAGE_SIZE;
       const end = start + BLOG_PAGE_SIZE;
 
-      container.innerHTML = cards.slice(start, end).join("");
+      container.innerHTML = cards.slice(start, end).map((card) => card.html).join("");
 
       if (pagination) {
         renderArchivePagination(pagination, currentPage, totalPages, renderPage);
@@ -1212,6 +1461,7 @@ async function loadProjectPage() {
 async function loadNotePage() {
   const noteContent = document.getElementById("noteContent");
   const noteTitle = document.getElementById("noteTitle");
+  const noteMeta = document.getElementById("noteMeta");
   const noteFileName = document.getElementById("noteFileName");
 
   if (!noteContent) return;
@@ -1248,14 +1498,22 @@ async function loadNotePage() {
 
   try {
     noteContent.innerHTML = `<p class="loading-text">Đang tải nội dung...</p>`;
+    if (noteMeta) {
+      noteMeta.innerHTML = "";
+    }
 
     const markdownPath = joinPath(SITE_CONFIG.archivesDir, file);
     const markdown = await fetchTextFile(markdownPath);
-    const processed = preprocessMarkdown(markdown, file);
+    const metadata = extractArchiveMetadata(markdown, file);
+    const processed = preprocessMarkdown(stripArchiveMetadata(markdown), file);
     const title = extractTitleFromMarkdown(file, markdown);
 
     if (noteTitle) {
       noteTitle.textContent = title;
+    }
+
+    if (noteMeta) {
+      noteMeta.innerHTML = renderArchiveMetadata(metadata);
     }
 
     document.title = `${title} - Azaki`;
