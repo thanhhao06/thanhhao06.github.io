@@ -4,12 +4,6 @@ published: published
 created: 24/05/2026 
 tags: Challenge, CTF
 
-| Challenge                             | Author      |
-| ------------------------------------- | ----------- |
-| CCTV                                  | fr4nk       |
-| the bluetooth device is ready to pair | 3 sao 5 phí |
-| Mr. Robot                             | un1dt5      |
-
 ## CCTV
 
 KMA-NVR-X7 went dark during a brief Lab B blackout. Use the recovered evidence to prove what survived the reset.
