@@ -1219,22 +1219,3 @@ Sau khi giải đủ 12 câu thì mình nhận được flag
 >Flag: KMACTF{https://youtu.be/r9jL-lbE558_D5929CCFDEB6C5FF}
 ---
 
-<<<<<<< HEAD
-## Death Note Revenge
-
-2025, a note was left behind. 2026, came back from the dead.
-A suspect thought deleting the draft was enough. But Windows remembers more than it should.
-Recover flag!
-Flag format: `KMACTF{...}`
-
----
-<p style="text-align:right; font-style:italic;">
-  Author: <b>@fr4nk </b> 
-</p>
-
-Sau khi recover được các key word
-```
-kira-
-```
-=======
->>>>>>> 4940b4e (Update)
