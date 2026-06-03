@@ -1174,13 +1174,14 @@ async function loadArchivesPage() {
       currentPage = totalPages;
     }
 
-    const renderPage = (page) => {
+    const renderPage = (page, shouldScroll = false) => {
       currentPage = page;
 
       const start = (page - 1) * BLOG_PAGE_SIZE;
       const end = start + BLOG_PAGE_SIZE;
 
       container.innerHTML = cards.slice(start, end).map((card) => card.html).join("");
+      revealElements(container.querySelectorAll(".archive-box"));
 
       if (pagination) {
         renderArchivePagination(pagination, currentPage, totalPages, renderPage);
@@ -1189,8 +1190,8 @@ async function loadArchivesPage() {
       setArchivePageToUrl(currentPage);
 
       const heroCard = document.querySelector(".archive-hero-card");
-      if (heroCard) {
-        heroCard.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (shouldScroll && heroCard) {
+        heroCard.scrollIntoView({ behavior: "auto", block: "start" });
       }
     };
 
@@ -1268,7 +1269,7 @@ function renderArchivePagination(container, currentPage, totalPages, onPageChang
     button.addEventListener("click", () => {
       const page = Number(button.dataset.page);
       if (!page || page < 1 || page > safeTotalPages || page === safeCurrentPage) return;
-      onPageChange(page);
+      onPageChange(page, true);
     });
   });
 }
@@ -1628,8 +1629,39 @@ async function loadBackgroundPage() {
   }
 }
 
+function revealElements(elements) {
+  const revealTargets = Array.from(elements || []).filter(Boolean);
+  if (!revealTargets.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    revealTargets.forEach((item) => item.classList.add("show"));
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -8% 0px"
+    }
+  );
+
+  revealTargets.forEach((item, index) => {
+    item.classList.add("reveal-up");
+    item.style.transitionDelay = `${Math.min(index * 0.04, 0.2)}s`;
+    revealObserver.observe(item);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-    const revealTargets = [
+  revealElements([
     ...document.querySelectorAll(".archive-hero-card"),
     ...document.querySelectorAll(".archive-box"),
     ...document.querySelectorAll(".card-section"),
@@ -1637,30 +1669,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ...document.querySelectorAll(".message-card"),
     ...document.querySelectorAll(".project-card"),
     ...document.querySelectorAll(".bg-card")
-  ];
-
-  if (revealTargets.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -8% 0px"
-      }
-    );
-
-    revealTargets.forEach((item, index) => {
-      item.classList.add("reveal-up");
-      item.style.transitionDelay = `${Math.min(index * 0.06, 0.3)}s`;
-      revealObserver.observe(item);
-    });
-  }
+  ]);
   applySavedBackground();
 
   if (document.getElementById("archiveBoxes")) {

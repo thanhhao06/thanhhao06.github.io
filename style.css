@@ -1176,13 +1176,13 @@ a {
 }
 
 .about-preview-grid {
-  width: min(1440px, 100%);
+  width: min(1040px, 100%);
   margin: 120px auto 0;
   display: grid;
   grid-template-columns: minmax(420px, 600px) minmax(260px, 360px);
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  column-gap: 140px;
+  column-gap: 48px;
 }
 
 .about-preview-card {
@@ -1207,8 +1207,11 @@ a {
 
 .about-avatar-slot {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 18px;
+  text-align: center;
 }
 
 .about-avatar {
@@ -1217,6 +1220,23 @@ a {
   object-fit: cover;
   border-radius: 50%;
   display: block;
+}
+
+.about-kma-logo {
+  width: min(360px, 82vw);
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.34));
+}
+
+.about-academy-name {
+  max-width: 420px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1200px) {
@@ -3038,7 +3058,7 @@ body[data-page="skill"] .skill-hero-box h1 {
 
 /* ===== Blur mạnh hơn nữa ===== */
 :root {
-  --skill-glass-blur: blur(42px);
+  --skill-glass-blur: blur(18px);
 }
 
 .landing-copy,
@@ -3054,8 +3074,8 @@ body[data-page="skill"] .skill-hero-box h1 {
 .video-card,
 .hero-intro-card,
 .hero-avatar-ring {
-  backdrop-filter: blur(42px) saturate(150%) !important;
-  -webkit-backdrop-filter: blur(42px) saturate(150%) !important;
+  backdrop-filter: blur(18px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
 }
 
 .archive-box,
@@ -3070,16 +3090,16 @@ body[data-page="skill"] .skill-hero-box h1 {
 .card,
 .tool-card,
 .feature-card {
-  backdrop-filter: blur(32px) saturate(145%) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(145%) !important;
+  backdrop-filter: blur(14px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(120%) !important;
 }
 
 .archive-page-btn,
 .skill-tab-btn,
 .landing-tags a,
 .btn-ghost {
-  backdrop-filter: blur(26px) saturate(140%) !important;
-  -webkit-backdrop-filter: blur(26px) saturate(140%) !important;
+  backdrop-filter: blur(12px) saturate(115%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(115%) !important;
 }
 
 /* MathJax trong bài viết markdown */
@@ -3230,4 +3250,16 @@ body[data-page="project"] .project-hero-card {
   .project-card {
     min-height: 0;
   }
+}
+
+body[data-page="note"] .note-card {
+  background: rgba(4, 8, 18, 0.76) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34) !important;
+  backdrop-filter: blur(18px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(125%) !important;
+}
+
+body[data-page="note"] .note-sidebar {
+  contain: layout paint;
 }
