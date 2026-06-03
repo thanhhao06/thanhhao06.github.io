@@ -144,6 +144,7 @@ b3BlcmF0b3I6a21hQGNhbTA3LTE4NDI3Mwo=
 ### 2. Tìm tham số Access-key
 
 Tiếp đến là mình cần phải tìm Access-key và trong `operator_manual_extract.txt` cũng đã có gợi ý cho việc này
+
 ```operator_manual_extract.txt
 3.3 Access-key template
 The operator access key follows the template 'KMAOP-' '<camera_id>' (the
@@ -542,7 +543,7 @@ Gợi ý tiếp theo là `Volume` nên mình kiểm tra các packet liên quan t
 Mình lọc các gói `btavrcp.pdu_id == 0x50` vì đây là nhóm packet liên quan tới thông tin volume
 ![[Pasted image 20260531135149.png]]
 
-Kiểm tra và lọc riêng các gói tin chứa âm thanh thì mình thấy 
+Kiểm tra và lọc riêng các gói tin chứa âm thanh
 ```bash 
 tshark -r challenge.pcapng -Y 'btavrcp.pdu_id == 0x50 && bthci_acl.src.bd_addr == 24:b2:b9:7d:36:6e' -T fields -e frame.number -e frame.time_epoch -e btavrcp.volume > volume.tsv
 ```
