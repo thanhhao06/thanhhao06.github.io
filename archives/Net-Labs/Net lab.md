@@ -1,12 +1,8 @@
----
-author:
-  - Azaki
+author: Azaki
 source: https://hackmd.io/@azaki/H1rd-W0lbg
 published: published
 created: 2025-11-22
-description:
-title:
----
+tags: Challenge, CTF
 
 # Net 1
 

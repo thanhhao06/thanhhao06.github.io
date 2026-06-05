@@ -1,11 +1,14 @@
----
-title: Memory lab
-
----
+author: Azaki
+published: published
+created: 2025-11-23
+description:
+tags: Challenge, CTF
 
 # [Lab 0 (Never Too Late Mister)](https://github.com/stuxnet999/MemLabs/tree/master/Lab%200)
 
 My friend John is an "environmental" activist and a humanitarian. He hated the ideology of Thanos from the Avengers: Infinity War. He sucks at programming. He used too many variables while writing any program. One day, John gave me a memory dump and asked me to find out what he was doing while he took the dump. Can you figure it out for me?
+
+---
 
 Đọc thông tin của image để lấy profile
 ```bash
@@ -80,10 +83,12 @@ python2 vol.py -f ~/Downloads/Challenge.raw --profile=Win7SP0x86 hashdump
 
 ![[Pasted image 20260415041524.png]]
 
+---
 # [Lab 1 (Beginner's Luck)](https://github.com/stuxnet999/MemLabs/tree/master/Lab%201)
 
 My sister's computer crashed. We were very fortunate to recover this memory dump. Your job is get all her important files from the system. From what we remember, we suddenly saw a black window pop up with some thing being executed. When the crash happened, she was trying to draw something. Thats all we remember from the time of crash.
 
+---
 ## First flag
 Đầu tiên là đọc thông tin image
 
@@ -154,13 +159,14 @@ Dùng pass mở file và mình được flag
 ![[Pasted image 20260415041723.png]]
 
 >Flag: flag{w3ll_3rd_stage_was_easy}
-
+---
 # [Lab 2 (A New World)](https://github.com/stuxnet999/MemLabs/tree/master/Lab%202)
 
 One of the clients of our company, lost the access to his system due to an unknown error. He is supposedly a very popular "environmental" activist. As a part of the investigation, he told us that his go to applications are browsers, his password managers etc. We hope that you can dig into this memory dump and find his important stuff and give it back to us.
 
 Note: This challenge is composed of 3 flags.
 
+---
 ## First flag
 
 ![[Pasted image 20260415041737.png]]
@@ -266,8 +272,6 @@ Mở file và lấy flag
 ![[Pasted image 20260415041925.png]]
 
 >Flag: flag{ok_So_Now_St4g3_3_í_DoNE!!}
-
-
 ---
 
 # [Lab 3 (The Evil's Den)](https://github.com/stuxnet999/MemLabs/tree/master/Lab%203)
@@ -347,8 +351,6 @@ Và thế là mình có flag hoàn chỉnh
 ![[Pasted image 20260415042128.png]]
 
 >Flag: inctf{0n3_h4lf_1s_n0t_3n0ugh}
-
-
 ---
 
 # [Lab 4 (Obsession)](https://github.com/stuxnet999/MemLabs/tree/master/Lab%204)
@@ -356,9 +358,9 @@ Và thế là mình có flag hoàn chỉnh
 My system was recently compromised. The Hacker stole a lot of information but he also deleted a very important file of mine. I have no idea on how to recover it. The only evidence we have, at this point of time is this memory dump. Please help me.
 
 Note: This challenge is composed of only 1 flag.
-
 The flag format for this lab is: inctf{s0me_l33t_Str1ng}
 
+---
 
 ![[Pasted image 20260415042140.png]]
 
@@ -390,8 +392,6 @@ Tìm kiếm thì mình tìm thấy được nội dung file Important.txt kèm f
 ![[Pasted image 20260415042216.png]]
 
 >Flag: inctf{1_is_n0t_EQu4l_7o_2_bUt_th1s_d0s3nt_m4ke_s3ns3}
-
-
 ---
 
 # [Lab 5 (Black Tuesday)](https://github.com/stuxnet999/MemLabs/tree/master/Lab%205)
@@ -408,7 +408,7 @@ Note-2: There was a small mistake when making this challenge. If you find any st
 
 Note-3: You'll get the stage 2 flag only when you have the stage 1 flag.
 
-
+---
 ## Second flag
 Đầu tiên xem danh xách tiến trình thì mình thấy có nhân tố mới là WINRAR vậy nên mình sẽ dành sự chú ý tới các file nén
 

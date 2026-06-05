@@ -1,15 +1,8 @@
----
-author:
-  - Azaki
-source: https://ctftime.org/event/2927
+author: Azaki
 published: published
 created: 2026-05-10
 description: Top 19
-tags:
-  - CTF
-  - BKISC
-  - Challenge
----
+tags: Challenge, BKISC, CTF
 
 
 ![[Pasted image 20260510085227.png]]
