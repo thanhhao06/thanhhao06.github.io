@@ -1,0 +1,83 @@
+<%
+page.__pageType = 'post';
+function plainText(value) {
+  return String(value || '').replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').trim();
+}
+function slugifyHeading(value) {
+  return plainText(value)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'section';
+}
+function fileNameOnly(value) {
+  return String(value || '').split(/[\/]/).filter(Boolean).pop() || '';
+}
+const postSourceFile = fileNameOnly(page.display_path || page.original_path || page.source);
+const tocSeen = {};
+const tocItems = [];
+const contentWithTocIds = String(page.content || '').replace(/<h([1-4])([^>]*)>([\s\S]*?)<\/h\1>/g, function(match, level, attrs, inner) {
+  const idMatch = attrs.match(/\sid=["']([^"']+)["']/);
+  let id = idMatch ? idMatch[1] : slugifyHeading(inner);
+  if (!idMatch) {
+    const count = tocSeen[id] || 0;
+    tocSeen[id] = count + 1;
+    if (count) id = `${id}-${count + 1}`;
+  }
+  tocItems.push({ level: Number(level), id, title: plainText(inner) });
+  return idMatch ? match : `<h${level}${attrs} id="${id}">${inner}</h${level}>`;
+});
+%>
+<main class="page-content post-page">
+  <div class="post-layout">
+    <article class="post-shell glass-panel">
+      <header class="post-header">
+        <div class="post-topline">
+          <a class="post-back-link" href="/blog/">← Quay lại Blog</a>
+          <% if (postSourceFile) { %>
+            <span class="post-source-path"><%= postSourceFile %></span>
+          <% } %>
+        </div>
+        <h1><%= page.title %></h1>
+        <div class="post-meta-row">
+          <span>author: <%= page.author || 'Azaki' %></span>
+          <span>date: <%= date(page.date, 'YYYY-MM-DD') %></span>
+          <% if (page.tags && page.tags.length) { %>
+            <span>tag:</span>
+            <% page.tags.each(function(tag) { %>
+              <span class="archive-tag"><%= tag.name %></span>
+            <% }) %>
+          <% } %>
+        </div>
+        <% if (postSourceFile) { %>
+          <p class="post-source-link">source: <span><%= postSourceFile %></span></p>
+        <% } %>
+      </header>
+      <div class="post-content">
+        <%- contentWithTocIds %>
+      </div>
+    </article>
+
+    <% if (tocItems.length) { %>
+      <aside class="post-toc" id="postToc" aria-label="Mục lục bài viết">
+        <div class="post-toc-header">
+          <div>
+            <p class="post-toc-eyebrow">On this page</p>
+            <h2><%= page.title %></h2>
+          </div>
+          <button class="post-toc-toggle" type="button" data-toc-toggle aria-expanded="true" aria-controls="postToc" aria-label="Ẩn mục lục" title="Ẩn mục lục">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <nav>
+          <% tocItems.forEach(function(item) { %>
+            <a class="toc-level-<%= item.level %>" href="#<%- item.id %>"><%= item.title %></a>
+          <% }) %>
+        </nav>
+      </aside>
+    <% } %>
+  </div>
+</main>

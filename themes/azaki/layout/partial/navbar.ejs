@@ -1,0 +1,18 @@
+<%
+const currentPath = '/' + (page.path || '').replace(/index\.html$/, '').replace(/\/$/, '');
+function active(path) {
+  if (path === '/' && currentPath === '/') return 'active';
+  if (path !== '/' && currentPath.startsWith(path.replace(/\/$/, ''))) return 'active';
+  return '';
+}
+%>
+<header class="navbar">
+  <a href="/" class="logo">Azaki</a>
+  <nav>
+    <a href="/" class="<%= active('/') %>">HOME</a>
+    <a href="/blog/" class="<%= active('/blog/') %>">BLOG</a>
+    <a href="/project/" class="<%= active('/project/') %>">PROJECT</a>
+    <a href="/skill/" class="<%= active('/skill/') %>">SKILL</a>
+  </nav>
+  <a href="/contact/" class="navbar-cta <%= active('/contact/') %>">CONTACT</a>
+</header>

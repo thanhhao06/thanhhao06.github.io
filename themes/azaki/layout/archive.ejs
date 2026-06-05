@@ -1,0 +1,52 @@
+<% page.__pageType = 'archives'; %>
+<main class="archive-page">
+  <section class="archive-hero-card">
+    <h1>Blog</h1>
+    <p>Nơi lưu trữ note, writeup và nghiên cứu cá nhân</p>
+  </section>
+
+  <section class="archive-boxes hexo-archive-list">
+    <% if (page.posts && page.posts.length) { %>
+      <% page.posts.each(function(post) { %>
+        <article class="archive-card">
+          <a href="<%- url_for(post.path) %>">
+            <h2><%= post.title %></h2>
+            <div class="archive-card-meta">
+              <span>author: <%= post.author || 'Azaki' %></span>
+              <span>date: <%= date(post.date, 'YYYY-MM-DD') %></span>
+            </div>
+            <% if (post.tags && post.tags.length) { %>
+              <div class="archive-card-tags">
+                <span>tag:</span>
+                <% post.tags.each(function(tag) { %>
+                  <span class="archive-tag"><%= tag.name %></span>
+                <% }) %>
+              </div>
+            <% } %>
+            <p class="archive-card-path"><%= post.display_path || post.original_path || post.source || post.path %></p>
+          </a>
+        </article>
+      <% }) %>
+    <% } else { %>
+      <div class="message-card">
+        <h3>Chưa có bài viết</h3>
+        <p>Thêm Markdown và ảnh vào <code>archives/</code> rồi build lại Hexo.</p>
+      </div>
+    <% } %>
+  </section>
+
+  <% if (page.total && page.total > 1) { %>
+    <nav class="archive-pagination" aria-label="Phân trang blog">
+      <%
+        function archivePageLink(num) {
+          return num === 1 ? '/blog/' : `/blog/page/${num}/`;
+        }
+      %>
+      <a class="archive-page-btn <%= page.current === 1 ? 'disabled' : '' %>" href="<%- archivePageLink(Math.max(1, page.current - 1)) %>" aria-label="Trang trước">&lt;</a>
+      <% for (let i = 1; i <= page.total; i += 1) { %>
+        <a class="archive-page-btn <%= i === page.current ? 'active' : '' %>" href="<%- archivePageLink(i) %>"><%= i %></a>
+      <% } %>
+      <a class="archive-page-btn <%= page.current === page.total ? 'disabled' : '' %>" href="<%- archivePageLink(Math.min(page.total, page.current + 1)) %>" aria-label="Trang sau">&gt;</a>
+    </nav>
+  <% } %>
+</main>

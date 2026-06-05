@@ -1,0 +1,43 @@
+title: Azaki
+subtitle: Cyber Security
+description: Personal portfolio, CTF writeups, cybersecurity notes, skills, and projects.
+author: Azaki
+language: vi
+timezone: Asia/Ho_Chi_Minh
+url: https://thanhhao06.github.io
+root: /
+permalink: blog/:slug/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+source_dir: source
+public_dir: public
+theme: azaki
+
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+archive_generator:
+  per_page: 12
+  yearly: false
+  monthly: false
+  daily: false
+
+archive_dir: blog
+category_dir: categories
+tag_dir: tags
+
+marked:
+  prependRoot: false
+  postAsset: false
+  gfm: true
+  breaks: false
+
+skip_render:
+  - assets/**
+  - bg/**
+  - blog-assets/**
