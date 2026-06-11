@@ -3,7 +3,9 @@ source: https://ctf.blackpinker.com/
 published: published  
 created: 24/05/2026
 description:  Top 23
-tags: Challenge, CTF
+tags: Competition, CTF
+
+![[Pasted image 20260611225212.png]]
 
 ![[Pasted image 20260527232730.png]]
 # Forensic
@@ -640,3 +642,51 @@ Khi xem pass của user part4 thì mình tìm đưuọc phần flag còn lại
 
 >Flag: HCMUS-CTF{d0nt_m1nd_me_just_doing_random_stuff_on_window_4nd_call_it_a_challenge_to_meet_kpi}
 ---
+
+# Crypto
+## EasyCurve
+
+Veryy easy
+
+---
+<p style="text-align:right; font-style:italic;">
+  Author: <b>@nesfan</b> 
+</p>
+
+
+
+>Flag: HCMUS-CTF{v3lus_f0rmul4_m4k3s_1s0g3n13s_1nst4nt}
+---
+## Crypto101
+
+777 too much? nope
+slop too much? yea
+
+---
+<p style="text-align:right; font-style:italic;">
+  Author: <b>@noah</b> 
+</p>
+
+
+>Flag: `HCMUS-CTF{tH3_L4tT1cE_w4$_r3dUc3D_bY_LLL_th3n_BKZ_b3t4_40_$H0rT_v3cT0r$_p4D1c_f0Rm4L_Gr0Up_L0G$_h3n$3L_L1fT$_m0d_p4_t0_p3_t0_p$_r3c0v3r_th3_k3y_fr0m_bYt3_c0mb0$_n0_m0r3_h0m3Br3W_CrYpT0$}`
+---
+## Rust In Peace
+
+It’s truly sad if you’re burning tokens to solve such a fun little challenge.
+
+---
+<p style="text-align:right; font-style:italic;">
+  Author: <b>@noah</b> 
+</p>
+
+
+
+---
+## Funny Helicopter Morphology - 1
+
+Can you guess the name? Note: Remove hex characters at the end, e.g HCMUS-CTF{flag-here-ab103} -> HCMUS-CTF{flag-here}
+
+---
+<p style="text-align:right; font-style:italic;">
+  Author: <b>@nesfan</b> 
+</p>

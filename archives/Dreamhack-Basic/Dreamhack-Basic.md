@@ -1,10 +1,11 @@
-author: Azaki
-source: https://hackmd.io/@azaki/SJE59T7Oxg
-published: published
-created: 2026-01-14
-description:
-tags: Challenge
+author: Azaki  
+source: [https://hackmd.io/@azaki/rylQYzltlg](https://hackmd.io/@azaki/SkiyKzgtge)  
+published: published  
+created: 2026-01-14  
+description:  
+tags: Challenge, CTF
 
+![[Pasted image 20260611223150.png]]
 
 ```
 Dreamhack - Easy challenge

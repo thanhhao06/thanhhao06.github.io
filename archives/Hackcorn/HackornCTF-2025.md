@@ -1,10 +1,10 @@
-author: Azaki
-source: https://hackmd.io/@azaki/HJu8Hmsb-x
-published: published
-created: 2025-10-03
-description:
-tags: Challenge, CTF
+author: Azaki  
+published: published  
+created: 2026-10-03  
+description:  Top29
+tags: Competition, CTF
 
+![[Pasted image 20260611230633.png]]
 
 ## sanity check
 I joined the discord the contest provided and went to the #announcements

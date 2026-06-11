@@ -1,11 +1,11 @@
 author: Azaki
-source: https://hackmd.io/@azaki/BJoZdD35ex
+source: [https://hackmd.io/@azaki/rylQYzltlg](https://hackmd.io/@azaki/BJoZdD35ex)
 published: published
 created: 2025-10-30
 description:
-tags: Challenge
+tags: Challenge, CTF
 
-
+![[Pasted image 20260611230918.png]]
 # Forensic
 ```
 Viblo - Forensic challenge

@@ -5,6 +5,8 @@ created: 2025-10-30
 description:
 tags: Challenge, CTF
 
+![[Pasted image 20260611231010.png]]
+
 ```
 CookieArena - Very Easy and Easy challenge
 Tiến độ: 8/18

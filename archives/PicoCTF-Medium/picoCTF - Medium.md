@@ -5,6 +5,8 @@ created: 2025-10-30
 description:
 tags: Challenge
 
+![[Pasted image 20260611232301.png]]
+
 ```
 PicoCTF - Medium challenge
 Tiến độ: 36/48
@@ -14,11 +16,10 @@ Tiến độ: 36/48
 </div>
 
 ## [Lookey here](https://play.picoctf.org/practice/challenge/279?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Attackers have hidden information in a very large mass of data in the past, maybe they are still doing it.
 Download the data here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones / Mubarak Mikail</b> 
@@ -33,11 +34,10 @@ Dùng strings để tìm flag
 ---
 
 ## [Packets Primer](https://play.picoctf.org/practice/challenge/286?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Download the packet capture file and use packet analysis software to find the flag.
 Download packet capture
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -52,10 +52,9 @@ Dùng wireshark đọc file pcap mở các gói tin thì thấy luôn flag
 ---
 
 ## [Matryoshka doll](https://play.picoctf.org/practice/challenge/129?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Matryoshka dolls are a set of wooden dolls of decreasing size placed one inside another. What's the final one? Image: this
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Susie/Pandu</b> 
@@ -70,10 +69,9 @@ Bài này thì mình chỉ cần binwalk tới khi ra flag thì thôi kiểu cơ
 ---
 
 ## [Wireshark doo dooo do doo...](https://play.picoctf.org/practice/challenge/115?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Can you find the flag? shark1.pcapng.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Dylan</b> 
@@ -88,11 +86,9 @@ Bài này giống như bài trên khác cái là flag bị mã hóa ROT13 chỉ 
 ---
 
 ## [Enhance!](https://play.picoctf.org/practice/challenge/265?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Download this image file and find the flag.
-Download image file
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -107,10 +103,9 @@ Download image file
 ---
 
 ## [tunn3l v1s10n](https://play.picoctf.org/practice/challenge/112?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 We found this file. Recover the flag.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Danny</b> 
@@ -140,11 +135,10 @@ Tìm được flag
 ---
 
 ## [Mob psycho](https://play.picoctf.org/practice/challenge/420?category=4&difficulty=2&page=1)
-:::info
-**Description**
+
 Can you handle APKs?
 Download the android apk here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@NGIRIMANA Schadrack</b> 
@@ -167,11 +161,10 @@ Decode
 ---
 
 ## [Dear Diary](https://play.picoctf.org/practice/challenge/413?category=4&difficulty=2&page=1)
-:::info
-**Description**
+
 If you can find the flag on this disk image, we can close the case for good!
 Download the disk image here.
-::::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@syreal</b> 
@@ -184,11 +177,10 @@ Quăng img lên Autospy rồi tìm từ khóa ==".txt"== sau đó ghép các kí
 ---
 
 ## [PcapPoisoning](https://play.picoctf.org/practice/challenge/362?category=4&difficulty=2&page=1)
-:::info
-**Description**
+
 How about some hide and seek heh?
 Download this file and find the flag.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Mubarak Mikail</b> 
@@ -203,11 +195,10 @@ Mình thấy có gói tín với kích thước lớn hơn các gói khác nên 
 ---
 
 ## [MSB](https://play.picoctf.org/practice/challenge/359?category=4&difficulty=2&page=1)
-:::info
-**Description**
+
 This image passes LSB statistical analysis, but we can't help but think there must be something to the visual artifacts present in this image...
 Download the image here
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -228,11 +219,10 @@ Nhấn <kbd>vi</kbd> để mở search.
 ---
 
 ## [hideme](https://play.picoctf.org/practice/challenge/350?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Every file gets a flag.
 The SOC analyst saw one image been sent back and forth between two people. They decided to investigate and found out that there was more than what meets the eye here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Geoffrey Njogu</b> 
@@ -257,11 +247,10 @@ Sau đó mở file zip là có được flag
 ---
 
 ## [FindAndOpen](https://play.picoctf.org/practice/challenge/348?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Someone might have hidden the password in the trace file.
 Find the key to unlock this file. This tracefile might be good to analyze.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Mubarak Mikail</b> 
@@ -281,11 +270,10 @@ Mở file flag đã bị khóa và có được flag
 ---
 
 ## [St3g0](https://play.picoctf.org/practice/challenge/305?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Download this image and find the flag.
 Download image
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones (ft. djrobin17)</b> 
@@ -300,13 +288,12 @@ Dùng zsteg tiếp
 ---
 
 ## [Sleuthkit Intro](https://play.picoctf.org/practice/challenge/301?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Download the disk image and use mmls on it to find the size of the Linux partition. Connect to the remote checker service to check your answer and get the flag.
 Note: if you are using the webshell, download and extract the disk image into /tmp not your home directory.
 Download disk image
 Additional details will be available after launching your challenge instance.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -331,12 +318,11 @@ Chạy lệnh được gợi ý sau đó nhập độ dài của Linux vừa tì
 ---
 
 ## [Sleuthkit Apprentice](https://play.picoctf.org/practice/challenge/300?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Download this disk image and find the flag.
 Note: if you are using the webshell, download and extract the disk image into /tmp not your home directory.
 Download compressed disk image
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -357,11 +343,10 @@ Export file ra và đọc
 ---
 
 ## [Redaction gone wrong](https://play.picoctf.org/practice/challenge/290?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Now you DON’T see me.
 This report has some critical data in it, some of which have been redacted correctly, while some were not. Can you find an important key that was not redacted properly?
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Mubarak Mikail</b> 
@@ -377,12 +362,11 @@ Dùng công cụ mở file pdf và tô đen sẽ ra flag
 ---
 
 ## [Operation Orchid](https://play.picoctf.org/practice/challenge/285?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 Download this disk image and find the flag.
 Note: if you are using the webshell, download and extract the disk image into /tmp not your home directory.
 Download compressed disk image
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -414,11 +398,10 @@ Mở file
 ---
 
 ## [File types](https://play.picoctf.org/practice/challenge/268?category=4&difficulty=2&page=2)
-:::info
-**Description**
+
 This file was found among some files marked confidential but my pdf reader cannot read it, maybe yours can.
 You can download the file from here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Geoffrey Njogu</b> 
@@ -494,11 +477,10 @@ Dùng Cyberchef đễ decode
 ---
 
 ## [Eavesdrop](https://play.picoctf.org/practice/challenge/264?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Download this packet capture and find the flag.
 Download packet capture
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@LT 'syreal' Jones</b> 
@@ -527,12 +509,11 @@ Sau đó mình đùng lệnh trong cuộc trò chuyện để giải mã
 ---
 
 ## [advanced-potion-making](https://play.picoctf.org/practice/challenge/205?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Ron just found his own copy of advanced potion making, but its been corrupted by some kind of spell. Help him recover it!
 Challenge Endpoints
 Download advanced-potion-making	advanced-potion-making
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@bigC</b> 
@@ -560,10 +541,9 @@ Nên mình thử dùng stegslove để check xem
 ---
 
 ## [Milkslap](https://play.picoctf.org/practice/challenge/139?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 🥛
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@James Lynch</b> 
@@ -579,10 +559,9 @@ Dùng stegslove sau đó chọn Analyse --> Data extract
 
 ---
 ## [Disk, disk, sleuth! II](https://play.picoctf.org/practice/challenge/137?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 All we know is the file with the flag is named `down-at-the-bottom.txt`... Disk image: dds2-alpine.flag.img.gz
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@syreal</b> 
@@ -602,10 +581,9 @@ Mở file và mình có flag
 ---
 
 ## [MacroHard WeakEdge](https://play.picoctf.org/practice/challenge/130?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 I've hidden a flag in this file. Can you find it? Forensics is fun.pptm
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@madStacks</b> 
@@ -642,10 +620,9 @@ Dùng Cyberchef để decodehoặc lệnh echo
 ---
 
 ## [Disk, disk, sleuth!](https://play.picoctf.org/practice/challenge/113?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Use `srch_strings` from the sleuthkit and some terminal-fu to find a flag in this disk image: dds1-alpine.flag.img.gz
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@syreal</b> 
@@ -661,10 +638,9 @@ Dùng strings mình có luôn flag
 ---
 
 ## [Wireshark twoo twooo two twoo...](https://play.picoctf.org/practice/challenge/110?category=4&difficulty=2&page=3)
-:::info
-**Description**
+
 Can you find the flag? shark2.pcapng.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Dylan</b> 
@@ -691,10 +667,9 @@ Ghép lại mình được flag
 ---
 
 ## [Trivial Flag Transfer Protocol](https://play.picoctf.org/practice/challenge/103?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 Figure out how they moved the flag.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Danny</b> 
@@ -733,11 +708,10 @@ Mở file flag
 ---
 
 ## [Pitter, Patter, Platters](https://play.picoctf.org/practice/challenge/87?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 'Suspicious' is written all over this disk image.
 Additional details will be available after launching your challenge instance.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@syreal</b> 
@@ -761,10 +735,9 @@ Tại đây mình có flag nhưng bị ngược
 
 
 ## [like1000](https://play.picoctf.org/practice/challenge/81?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 This .tar file got tarred a lot.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Danny</b> 
@@ -794,10 +767,9 @@ Và mình được 1 file flag.png
 ---
 
 ## [What Lies Within](https://play.picoctf.org/practice/challenge/74?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 There's something in the building. Can you retrieve the flag?
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Julio/Danny</b> 
@@ -812,10 +784,9 @@ Dùng zsteg
 ---
 
 ## [extensions](https://play.picoctf.org/practice/challenge/52?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 This is a really weird text file TXT? Can you find the flag?
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Sanjay C/Danny</b> 
@@ -838,10 +809,9 @@ Mở file PNG và có được flag
 ---
 
 ## [WhitePages](https://play.picoctf.org/practice/challenge/51?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 I stopped using YellowPages and moved onto WhitePages... but the page they gave me is all blank!
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@John Hammond</b> 
@@ -881,10 +851,9 @@ Chạy scritp sẽ có được flag
 ---
 
 ## [shark on wire 1](https://play.picoctf.org/practice/challenge/30?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 We found this packet capture. Recover the flag.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Danny</b> 
@@ -903,9 +872,9 @@ Follow và đi đến stream 6
 ---
 
 ## [m00nwalk](https://play.picoctf.org/practice/challenge/26?category=4&difficulty=2&page=4)
-:::info
+
 Decode this message from the moon.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Joon</b> 
@@ -922,10 +891,9 @@ Lậy ngược lại là cosd flag
 ---
 
 ## [So Meta](https://play.picoctf.org/practice/challenge/19?category=4&difficulty=2&page=4)
-:::info
-**Description**
+
 Find the flag in this picture.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Kevin Cooper/Danny</b> 
@@ -936,3 +904,36 @@ Dùng exiftool
 ![[pico1-someta.png]]
 
 >Flag: picoCTF{s0_m3ta_fec06741}
+---
+
+## [c0rrupt](https://learn.cylabacademy.org/library/53?page=5&category=4&difficulty=2)
+
+We found this [file](https://challenge-files.picoctf.net/c_fickle_tempest/87bdc8ce30b177d033b3d68bca4647950bb07304032861baa912ebe08701d355/mystery). Recover the flag.
+
+---
+
+
+
+>Flag: picoCTF{c0rrupt10n_1847995}
+---
+
+## Forensics Git 1
+
+Can you find the flag in this disk image?
+
+---
+
+
+
+---
+
+## Timeline 1
+
+Can you find the flag in this disk image? Wrap what you find in the picoCTF flag format.
+
+---
+
+
+
+---
+

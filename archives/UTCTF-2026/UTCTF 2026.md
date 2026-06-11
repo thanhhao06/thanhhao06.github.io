@@ -1,9 +1,10 @@
 author: Azaki
 published: published
 created: 2026-03-16
-tags: Challenge, CTF, Challenge
+tags: Competition, CTF
 
-## Forensic
+![[Pasted image 20260611225925.png]]
+# Forensic
 
 ## Cold Workspace
 
@@ -183,10 +184,10 @@ Giải nén và lấy flag3
 ![[utctf31.png]]
 Sau đó ghép lại thành flag hoàn chỉnh
 
-> Flag: utflaf{b45k3rv1ll3-3l3m3n74ry-4r7hur\_c0n4n\_d0yl3}
+> Flag: utflag{b45k3rv1ll3-3l3m3n74ry-4r7hur\_c0n4n\_d0yl3}
 ---
 
-## Mics
+# Mics
 
 Để cho mình link github nên mình truy cập vào và kiểm tra thì thấy có chuỗi base64  
 ![[utctf32.png]]
@@ -253,10 +254,13 @@ Tiếp tục dùng google image và tìm được tên địa điểm
 
 Mình lật ảnh lại và đọc chữ trên mặt nước để thu thập thêm manh mối và có vẻ chữ đó là **AGUAS DE LIND**  
   ![[utctf48.png]]
+
 Kết hợp manh mối tìm được với google image mình tìm được địa điểm  
 ![[utctf49.png]]
+
 Tra trên bản đồ thì mình tìm được cái hồ nơi có chữ trong hình  
 ![[utctf50.png]]
+
 Tìm ở các ô lân cận thì tìm được 3 từ cần tìm  
 ![[utctf51.png]]
 

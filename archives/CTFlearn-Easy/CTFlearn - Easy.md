@@ -1,10 +1,11 @@
 author: Azaki
-source: https://hackmd.io/@azaki/HJnh8ovvgg
+source: 
 published: published
 created: 2025-10-30
 description:
-tags:
+tags: Challenge, CTF
 
+![[Pasted image 20260611231053.png]]
 
 ```
 CTFlearn - Easy challenge
@@ -16,8 +17,7 @@ Tiến độ: 19/19
 
 ## [Forensics 101](https://ctflearn.com/challenge/96)
 
->[!info] 
->Think the flag is somewhere in there. Would you help me find it? https://mega.nz/#!OHohCbTa!wbg60PARf4u6E6juuvK9-aDRe_bgEL937VO01EImM7c
+Think the flag is somewhere in there. Would you help me find it? https://mega.nz/#!OHohCbTa!wbg60PARf4u6E6juuvK9-aDRe_bgEL937VO01EImM7c
 
 <hr>
 <p style="text-align:right; font-style:italic;">
@@ -34,8 +34,7 @@ Sử dụng strings để tìm ký tự trong file
 
 ## [Taking LS](https://ctflearn.com/challenge/103)
 
->[!info] 
->Just take the Ls. Check out this zip file and I be the flag will remain hidden. https://mega.nz/#!mCgBjZgB!_FtmAm8s_mpsHr7KWv8GYUzhbThNn0I8cHMBi4fJQp8
+Just take the Ls. Check out this zip file and I be the flag will remain hidden. https://mega.nz/#!mCgBjZgB!_FtmAm8s_mpsHr7KWv8GYUzhbThNn0I8cHMBi4fJQp8
 
 <hr>
 <p style="text-align:right; font-style:italic;">
@@ -72,8 +71,7 @@ Vậy là có flag
 
 ## [Binwalk](https://ctflearn.com/challenge/108)
 
->[!info] 
->Here is a file with another file hidden inside it. Can you extract it? https://mega.nz/#!qbpUTYiK!-deNdQJxsQS8bTSMxeUOtpEclCI-zpK7tbJiKV0tXYY
+Here is a file with another file hidden inside it. Can you extract it? https://mega.nz/#!qbpUTYiK!-deNdQJxsQS8bTSMxeUOtpEclCI-zpK7tbJiKV0tXYY
 
 <hr>
 <p style="text-align:right; font-style:italic;">
@@ -111,7 +109,6 @@ Mở file và ta có được flag
 
 ## [WOW.... So Meta](https://ctflearn.com/challenge/348)
 
->[!info]
 This photo was taken by our target. See what you can find out about him from it. https://mega.nz/#!ifA2QAwQ!WF-S-MtWHugj8lx1QanGG7V91R-S1ng7dDRSV25iFbk
 
 <hr>
@@ -135,7 +132,6 @@ Ra luôn Flag
 
 ## [Exif](https://ctflearn.com/challenge/303)
 
->[!info]
 If only the password were in the image?
 https://mega.nz/#!SDpF0aYC!fkkhBJuBBtBKGsLTDiF2NuLihP2WRd97Iynd3PhWqRw You could really ‘own’ it with exif.
 
@@ -153,7 +149,6 @@ Dùng công cụ exiftool
 ---
 ## [Rubber Duck](https://ctflearn.com/challenge/933)
 
->[!info]
 Find the flag! Simple forensics challenge to get started with.
 
 <hr>
@@ -171,7 +166,6 @@ Vừa mở file đã gặp flag
 
 ## [Git Is Good](https://ctflearn.com/challenge/104)
 
->[!info]
 The flag used to be there. But then I redacted it. Good Luck. https://mega.nz/#!3CwDFZpJ!Jjr55hfJQJ5-jspnyrnVtqBkMHGJrd6Nn_QqM7iXEuc
 
 <hr>
@@ -218,7 +212,6 @@ Sử dụng **==git==** để đọc log
 
 ## [I'm a dump](https://ctflearn.com/challenge/883)
 
->[!info]
 The keyword is hexadecimal, and removing an useless H.E.H.U.H.E. from the flag. The flag is in the format CTFlearn{*}
 
 <hr>
@@ -246,7 +239,6 @@ Hoặc sử dụng string
 
 ## [Snowboard](https://ctflearn.com/challenge/934)
 
->[!info]
 Find the flag in the jpeg file. Good Luck!
 
 <hr>
@@ -271,7 +263,6 @@ Vậy là ra flag
 
 ## [PikesPeak](https://ctflearn.com/challenge/935)
 
->[!info]
 Pay attention to those strings!
 
 <hr>
@@ -294,7 +285,6 @@ Mà do bài này có fomat flag sẵn nên ta dùng string để tìm cho dễ
 
 ## [Chalkboard](https://ctflearn.com/challenge/972)
 
->[!info]
 Solve the equations embedded in the jpeg to find the flag. Solve this problem before solving my Scope challenge which is worth 100 points.
 
 <hr>
@@ -319,7 +309,6 @@ Solve the equations embedded in the jpeg to find the flag. Solve this problem be
 
 ## [Tux!](https://ctflearn.com/challenge/973)
 
->[!info]
 The flag is hidden inside the Penguin! Solve this challenge before solving my 100 point Scope challenge which uses similar techniques as this one.
 
 <hr>
@@ -367,7 +356,6 @@ Mình giải nén file zip và sử dụng mật khẩu lúc đầu thì đượ
 
 ## [Pho Is Tasty!](https://ctflearn.com/challenge/971)
 
->[!info]
 The flag is hidden in the jpeg file. Good Luck! Have some Pho! Solve this challenge before solving my Scope challenge for 100 points.
 
 <hr>
@@ -398,7 +386,6 @@ Vậy là có được flag
 
 ## [Simple Steganography](https://ctflearn.com/challenge/894)
 
->[!info]
 Think the flag is somewhere in there. Would you help me find it? hint-" Steghide Might be Helpfull"
 
 <hr>
@@ -432,7 +419,6 @@ Decode sang base64 là ra flag
 
 ## [PDF by fdpumyp](https://ctflearn.com/challenge/957)
 
->[!info]
 Hi, just as we talked during a break, you have this file here and check if something is wrong with it. That's the only thing we found strange with this suspect, I hope there will be a password for his external drive
 Bye
 
@@ -461,7 +447,6 @@ Vậy là ra flag cùng với password
 
 ## [Minions](https://ctflearn.com/challenge/955)
 
->[!info]
 Hey! Minions have stolen my flag, encoded it few times in one cipher, and then hidden it somewhere there: https://mega.nz/file/1UBViYgD#kjKISs9pUB4E-1d79166FeX3TiY5VQcHJ_GrcMbaLhg Can you help me? TIP: Decode the flag until you got a sentence.
 
 <hr>
@@ -512,7 +497,6 @@ Decode n+1
 
 ## [GandalfTheWise](https://ctflearn.com/challenge/936)
 
->[!info]
 Extract the flag from the Gandalf.jpg file. You may need to write a quick script to solve this.
 
 <hr>
@@ -536,7 +520,6 @@ Bài này khoai phết do lần đầu làm dạng này
 
 ## [Blank Page](https://ctflearn.com/challenge/959)
 
->[!info]
 I've just graduated the Super Agent School. This is my first day as a spy. The Master-Mind sent me the secret message, but I don't remember how to read this. Help!
 
 <hr>
@@ -591,7 +574,6 @@ Vậy là có flag nhưng flag lại thiếu **==}==**, chỉ cần thê vào l�
 
 ## [abandoned place](https://ctflearn.com/challenge/1000)
 
->[!info]
 the flag is outside of the pic, try to find it. another hint: dimensions, dimensions, everything is in dimensions.
 
 <hr>

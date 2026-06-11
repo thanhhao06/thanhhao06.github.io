@@ -1,0 +1,48 @@
+<% page.__pageType = 'categories'; %>
+<%
+const categoryDefs = [
+  { name: 'CTF Challenge', slug: 'ctf-challenge', aliases: ['ctf challenge', 'challenge'] },
+  { name: 'CTF Competition', slug: 'ctf-competition', aliases: ['ctf competition', 'competition', 'competion', 'compertion'] },
+  { name: 'Theory', slug: 'theory', aliases: ['theory', 'thoery'] }
+];
+const allPosts = site.posts && site.posts.data ? site.posts.data : [];
+function normalizeTerm(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+function collectionNames(collection) {
+  if (!collection || !collection.data) return [];
+  return collection.data.map(function(item) { return item.name; });
+}
+function postTerms(post) {
+  return collectionNames(post.categories).concat(collectionNames(post.tags)).map(normalizeTerm);
+}
+function belongsToCategory(post, category) {
+  const terms = postTerms(post);
+  return category.aliases.map(normalizeTerm).some(function(alias) { return terms.includes(alias); });
+}
+const categoryItems = categoryDefs.map(function(category) {
+  const posts = allPosts.filter(function(post) { return belongsToCategory(post, category); });
+  return Object.assign({}, category, { count: posts.length });
+});
+%>
+<main class="categories-page page-enter">
+  <section class="categories-hero categories-overview-hero">
+    <h1>Categories</h1>
+    <p>Browse writeups and notes by topic</p>
+  </section>
+
+  <section class="category-overview" aria-label="Categories overview">
+    <% categoryItems.forEach(function(category) { %>
+      <a class="category-summary-card reveal-item" href="/categories/<%- category.slug %>/">
+        <span class="category-icon" aria-hidden="true"></span>
+        <span class="category-summary-name"><%= category.name %></span>
+        <span class="category-summary-count"><%= category.count %> <%= category.count === 1 ? 'post' : 'posts' %></span>
+        <span class="category-summary-arrow" aria-hidden="true"></span>
+      </a>
+    <% }) %>
+  </section>
+</main>

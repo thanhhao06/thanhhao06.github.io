@@ -11,8 +11,11 @@ function active(path) {
   <nav>
     <a href="/" class="<%= active('/') %>">HOME</a>
     <a href="/blog/" class="<%= active('/blog/') %>">BLOG</a>
+    <a href="/categories/" class="<%= active('/categories/') %>">CATEGORIES</a>
     <a href="/project/" class="<%= active('/project/') %>">PROJECT</a>
     <a href="/skill/" class="<%= active('/skill/') %>">SKILL</a>
   </nav>
-  <a href="/contact/" class="navbar-cta <%= active('/contact/') %>">CONTACT</a>
+  <div class="navbar-actions">
+    <a href="/contact/" class="navbar-cta <%= active('/contact/') %>">CONTACT</a>
+  </div>
 </header>

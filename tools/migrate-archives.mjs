@@ -161,6 +161,58 @@ async function copyArchiveAssets(allFiles) {
   }
 }
 
+function firstMarkdownImage(markdown) {
+  const wikiImage = markdown.match(/!\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/);
+  if (wikiImage) return wikiImage[1].trim().replace(/\\/g, "/");
+
+  const mdImage = markdown.match(/!\[[^\]]*\]\((?!https?:\/\/|data:|\/)([^)]+)\)/i);
+  if (mdImage) return mdImage[1].trim().replace(/\\/g, "/");
+
+  return "";
+}
+
+function fallbackCoverForDir(allFiles, relativeDir) {
+  const normalizedDir = relativeDir ? relativeDir.split(path.sep).join("/") : "";
+  const images = allFiles
+    .filter((file) => imageExtensions.has(path.extname(file).toLowerCase()))
+    .map((file) => path.relative(archivesDir, file))
+    .filter((relative) => {
+      const dir = path.dirname(relative) === "." ? "" : path.dirname(relative).split(path.sep).join("/");
+      return dir === normalizedDir;
+    })
+    .sort((a, b) => a.localeCompare(b));
+
+  return images.length ? path.basename(images[0]) : "";
+}
+
+function coverUrl(markdown, relativeDir, allFiles) {
+  const picked = firstMarkdownImage(markdown) || fallbackCoverForDir(allFiles, relativeDir);
+  if (!picked || /^(https?:\/\/|data:|\/)/i.test(picked)) return picked || "";
+  const assetPrefix = `/blog-assets/${encodeUrlPath(relativeDir)}`.replace(/\/+$/, "");
+  return `${assetPrefix}/${encodeUrlPath(picked)}`;
+}
+
+function normalizeTag(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function categoryForPost(relativeDir, title, tags) {
+  const normalizedTags = tags.map(normalizeTag);
+  const hasTag = (names) => normalizedTags.some((tag) => names.includes(tag));
+
+  if (hasTag(["theory", "thoery"])) return "Theory";
+  if (hasTag(["competition", "competion", "compertion"])) return "CTF Competition";
+  if (hasTag(["challenge"])) return "CTF Challenge";
+
+  const text = normalizeTag(`${relativeDir} ${title}`);
+  if (text.includes("fundamental") || text.includes("network")) return "Theory";
+  return "CTF Challenge";
+}
+
 async function migratePosts(allFiles) {
   await fs.rm(postsDir, { recursive: true, force: true });
   await fs.mkdir(postsDir, { recursive: true });
@@ -176,19 +228,22 @@ async function migratePosts(allFiles) {
     const parsed = parseLegacyMetadata(stripFrontMatter(raw));
     const createdDate = parseDate(parsed.metadata.created, stat.mtime);
     const tags = parseTags(parsed.metadata.tags);
+    const cover = coverUrl(parsed.body, relativeDir, allFiles);
+    const category = categoryForPost(relativeDir, titleFromFile(file), tags);
     const content = rewriteMarkdownAssets(parsed.body, relativeDir);
     const frontMatter = [
       "---",
       `title: "${yamlEscape(titleFromFile(file))}"`,
       `date: ${createdDate.toISOString()}`,
       `slug: ${slug}`,
-      `categories: "${yamlEscape(relativeDir || "Blog")}"`,
+      `categories: "${yamlEscape(category)}"`,
       `author: "${yamlEscape(parsed.metadata.author || "Azaki")}"`,
       `source: "${yamlEscape(parsed.metadata.source || "")}"`,
       `published_status: "${yamlEscape(parsed.metadata.published || "")}"`,
       `description: "${yamlEscape(parsed.metadata.description || "")}"`,
       `original_path: "${yamlEscape(toPosix(relative))}"`,
       `display_path: "${yamlEscape(`${slug}.md`)}"`,
+      `cover: "${yamlEscape(cover)}"`,
       `tags:${yamlList(tags)}`,
       "---",
       ""

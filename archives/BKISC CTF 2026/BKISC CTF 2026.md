@@ -2,7 +2,7 @@ author: Azaki
 published: published
 created: 2026-05-10
 description: Top 19
-tags: Challenge, BKISC, CTF
+tags: Competition, CTF
 
 
 ![[Pasted image 20260510085227.png]]

@@ -3,8 +3,9 @@ source: https://hackmd.io/@azaki/HyeUjWFwxl
 published: published
 created: 2025-10-30
 description:
-tags: Challenge
+tags: Challenge, CTF
 
+![[Pasted image 20260611231057.png]]
 
 ```
 CTFlearn - Medium challenge
@@ -15,9 +16,9 @@ Tiến độ: 17/19
 </div>
 
 ## [07601](https://ctflearn.com/challenge/97)
-:::info
+
 https://mega.nz/#!CXYXBQAK!6eLJSXvAfGnemqWpNbLQtOHBvtkCzA7-zycVjhHPYQQ I think I lost my flag in there. Hopefully, it won't get attacked...
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@alexkato29 </b> 
@@ -31,12 +32,10 @@ Giải nén n+1 file sau đó sử dụng lệnh để dò
 >Flag: ABCTF{Du$t1nS_D0jo}
 
 ---
-
 ## [Milk's Best Friend](https://ctflearn.com/challenge/195)
----
-:::info
+
 There's nothing I love more than oreos, lions, and winning. https://mega.nz/#!DC5F2KgR!P8UotyST_6n2iW5BS1yYnum8KnU0-2Amw2nq3UoMq0Y Have Fun :)
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@bobbyjives</b> 
@@ -59,10 +58,10 @@ Sử dụng strings
 ---
 
 ## [A CAPture of a Flag](https://ctflearn.com/challenge/356)
-:::info
+
 This isn't what I had in mind, when I asked someone to capture a flag... can you help? You should check out WireShark.
 https://mega.nz/#!3WhAWKwR!1T9cw2srN2CeOQWeuCm0ZVXgwk-E2v-TrPsZ4HUQ_f4
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@hazzy</b> 
@@ -77,11 +76,10 @@ https://mega.nz/#!3WhAWKwR!1T9cw2srN2CeOQWeuCm0ZVXgwk-E2v-TrPsZ4HUQ_f4
 ---
 
 ## [Up For A Little Challenge?](https://ctflearn.com/challenge/142)
-:::info
-https://mega.nz/#!LoABFK5K!0sEKbsU3sBUG8zWxpBfD1bQx_JY_MuYEWQvLrFIqWZ0
 
+https://mega.nz/#!LoABFK5K!0sEKbsU3sBUG8zWxpBfD1bQx_JY_MuYEWQvLrFIqWZ0
 You Know What To Do ...
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@skycoder</b> 
@@ -130,11 +128,11 @@ Tới bước này vẫn lừa, flag nằm ở góc dưới
 ---
 
 ## [Digital Camouflage](https://ctflearn.com/challenge/237)
-:::info
+
 We need to gain access to some routers. Let's try and see if we can find the password in the captured network data: https://mega.nz/#!XDBDRAQD!4jRcJvAhMkaVaZCOT3z3zkyHre2KHfmkbCN5lYpiEoY Hint 1: It looks like someone logged in with their password earlier. Where would log in data be located in a network capture?<br /> Hint 2: If you think you found the flag, but it doesn't work, consider that the data may be encrypted.
 
 Credit: picoCTF 2017
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@skywalkrs</b> 
@@ -170,9 +168,9 @@ Decode base64
 ---
 
 ## [The adventures of Boris Ivanov. Part 1.](https://ctflearn.com/challenge/373)
-:::info
+
 The KGB agent Boris Ivanov got information about an attempt to sell classified data. He quickly reacted and intercepted the correspondence. Help Boris understand what exactly they were trying to sell. Here is the interception data: https://mega.nz/#!HfAHmKQb!zg6EPqfwes1bBDCjx7-ZFR_0O0-GtGg2Mrn56l5LCkE
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@nomad</b> 
@@ -196,10 +194,10 @@ Tinh chỉnh đến khi thấy flag
 ---
 
 ## [Exclusive Santa](https://ctflearn.com/challenge/851)
-:::info
+
 Dear Santa,
 Hey! There are so many toys that I want, but I just don't have the money. I don't care which toy I get as long as it's one or the other, but not both!
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@EdbR</b> 
@@ -239,9 +237,9 @@ Lật ảnh lại
 ---
 
 ## [Naughty Cat](https://ctflearn.com/challenge/890)
-:::info
+
 I think my cat is hiding something...
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Negatyw01</b> 
@@ -296,9 +294,9 @@ Decode base64
 ---
 
 ## [Smiling ASCII](https://ctflearn.com/challenge/903)
-:::info
+
 Find the flag on the smiling face.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@lvmalware</b> 
@@ -331,9 +329,9 @@ Ra luôn flag
 ---
 
 ## [MountainMan](https://ctflearn.com/challenge/888)
-:::info
+
 Don't be fooled by two 0xffd9 markers. xor is your friend.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@kcbowhunter</b> 
@@ -354,9 +352,9 @@ Ra flag
 ---
 
 ## [HailCaesar!](https://ctflearn.com/challenge/952)
-:::info
+:
 You might need to write some Python to solve this challenge. Some encryption may be involved. Good Luck!
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@kcbowhunter</b> 
@@ -395,9 +393,9 @@ Nhưng bị lỗi vài chỗ nên mình thử tìm vài phần của flag
 ---
 
 ## [Dumpster](https://ctflearn.com/challenge/355)
-:::info
+
 I found a flag, but it was encrypted! Our systems have detected that someone has successfully decrypted this flag, and we stealthily took a heap dump of the program (in Java). Can you recover the flag for me? Here's the source code of the Java program and the heap dump: https://mega.nz/#!rHYGlAQT!48DlH2pSZg10Ei3f-Ivm7RoNBbV16Qw0wN4cWxANUwY
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@thekidofarcrania</b> 
@@ -423,7 +421,6 @@ Vậy là mình tìm được 16 byte passHash
 
 Tới đây mình dùng script
 
-
 ```python    
 from base64 import b64decode
 from Crypto.Cipher import AES
@@ -445,7 +442,6 @@ if 1 <= pad_len <= AES.block_size and all(p == pad_len for p in pt[-pad_len:]):
 
 print(pt.decode("utf-8"))
 ```
-    
 
 Sau đó thì chạy script sẽ được flag
 
@@ -456,9 +452,9 @@ Sau đó thì chạy script sẽ được flag
 ---
 
 ## [The Keymaker](https://ctflearn.com/challenge/912)
-:::info
+
 Jpeg comments can be very interesting.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@kcbowhunter </b> 
@@ -503,9 +499,9 @@ Và mình có được file flag
 ---
 
 ## [ShahOfGimli](https://ctflearn.com/challenge/958)
-:::info
+
 That still only counts as one!
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@kcbowhunter</b> 
@@ -569,9 +565,9 @@ Chạy lệnh
 ---
 
 ## [Mr.Bin](https://ctflearn.com/challenge/997)
-:::info
+
 Mr.Bin is here to help you,can you find the flag?
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@someone92</b> 
@@ -618,11 +614,11 @@ Hơi khó nhìn tí
 ---
 
 ## [SpaceStation](https://ctflearn.com/challenge/1045)
-:::info
+
 The SpaceStation.jpg contains the encrypted flag in the file flag.enc. The flag is encrypted using openssl and the AES algorithm. The iv and key used for the openssl encryption command are opcodes in an executable named Bangalore that is also hidden in SpaceStation.jpg.
 You will need to know just a little bit about crypto, executable file formats and assembler to solve this challenge... objdump is your friend :-)
 Needed info is provided in the embedded readme file.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@kcbowhunter</b> 
@@ -666,25 +662,10 @@ Và mở file
 
 ---
 
-## [Jakarta](https://ctflearn.com/challenge/980)
-:::success
-This challenge combines forensics, crypto and programming. A 4096 bit RSA key is used to encrypt the flag and both the encrypted key and the encrypted flag are hidden inside the jpeg. Python scripts are also provided to help decrypt the RSA key which is xor'd with bytes from the jpeg. These same Python scripts can be used as part of solving my 100 point Scope challenge. Good Luck! You may want to solve my MountainMan challenge first if you are having difficulty finding the key and flag hidden in the jpeg.
-:::
-<hr>
-<p style="text-align:right; font-style:italic;">
-  Author: <b>@kcbowhunter</b> 
-</p>
-
-Link bài bị lỗi không giải đc
-
-
-
----
-
 ## [TheVault](https://ctflearn.com/challenge/1025)
-:::info
+
 Roses are Red Violets are Blue What is in this Vault Is not meant for you
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@kcbowhunter</b> 
@@ -708,13 +689,10 @@ Mình thử làm theo tác giả gợi ý về 2 file py, chạy file py1 để 
 ![[ctflearn1-vault3.png]]
 
 Tính tham số
-:::spoiler
 Start = EOI + 2 = 15125.
 length = (filesize - start) + 1
-       = (266845 - 15125) + 1
-       = 251721
-
-:::
+= (266845 - 15125) + 1
+= 251721
 
 Chạy file py2 với tham số đã tính
 
@@ -754,16 +732,3 @@ for n in range(1,95):
 >Flag: CTFlearn{Show_Me_The_M0ney}
 
 ---
-
-## [Nighthawk](https://ctflearn.com/challenge/981)
-:::info
-The flag begins with CTFlearn{...
-:::
-<hr>
-<p style="text-align:right; font-style:italic;">
-  Author: <b>@kcbowhunter</b> 
-</p>
-
-
----
-

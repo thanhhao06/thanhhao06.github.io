@@ -4,6 +4,7 @@ published: published
 created: 2025-11-22
 tags: Challenge, CTF
 
+![[Pasted image 20260611231825.png]]
 # Net 1
 
 Chúng tôi phát hiện bất thường trong lưu lượng Modbus TCP/IP của hệ thống điều khiển; một số thanh ghi có vài dữ lieu bất thường. Hãy giúp tôi điều tra và phân tích file để tìm ra nguyên nhân gốc.

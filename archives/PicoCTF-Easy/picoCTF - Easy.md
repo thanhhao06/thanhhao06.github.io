@@ -1,10 +1,11 @@
 author: Azaki
-source: https://hackmd.io/@azaki/SkiyKzgtge
+source: [https://hackmd.io/@azaki/rylQYzltlg](https://hackmd.io/@azaki/SkiyKzgtge)
 published: published
 created: 2025-10-30
 description:
 tags: Challenge
 
+![[Pasted image 20260611232256.png]]
 
 ````
 PicoCTF - Easy challenge
@@ -16,10 +17,9 @@ Tiến độ: 9/9
 
 
 ## [information](https://play.picoctf.org/practice/challenge/186?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 Files can always be changed in a secret way. Can you find the flag? cat.jpg
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@susie</b> 
@@ -38,10 +38,9 @@ Decode
 ---
 
 ## [Glory of the Garden](https://play.picoctf.org/practice/challenge/44?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 This garden contains more than it seems.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@jedavis/Danny</b> 
@@ -56,13 +55,12 @@ Dùng strings để tìm flag
 ---
 
 ## [Scan Surprise](https://play.picoctf.org/practice/challenge/444?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 I've gotten bored of handing out flags as text. Wouldn't it be cool if they were an image instead?
 You can download the challenge files here:
 challenge.zip
 Additional details will be available after launching your challenge instance.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Jeffery John</b> 
@@ -81,11 +79,10 @@ Trong hint có đề cập dùng zbar-tools nên mình dùng thử
 ---
 
 ## [Verify](https://play.picoctf.org/practice/challenge/450?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 People keep trying to trick my players with imitation flags. I want to make sure they get the real thing! I'm going to provide the SHA-256 hash and a decrypt script to help you know that my flags are legitimate.
 Additional details will be available after launching your challenge instance.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Jeffery John</b> 
@@ -105,11 +102,10 @@ Sử dụng lệnh ở phần mô tả để chạy
 ---
 
 ## [Secret of the Polyglot](https://play.picoctf.org/practice/challenge/423?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 The Network Operations Center (NOC) of your local institution picked up a suspicious file, they're getting conflicting information on what type of file it is. They've brought you in as an external expert to examine the file. Can you extract all the information from this strange file?
 Download the suspicious file here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@syreal</b> 
@@ -138,11 +134,10 @@ Vậy là có được phần đàu của flag ghép 2 phần lại là xong
 ---
 
 ## [CanYouSee](https://play.picoctf.org/practice/challenge/408?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 How about some hide and seek?
 Download this file here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Mubarak Mikail</b> 
@@ -161,11 +156,10 @@ Decode
 ---
 
 ## [RED](https://play.picoctf.org/practice/challenge/460?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 RED, RED, RED, RED
 Download the image: red.png
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Shuailin Pan (LeConjuror)</b> 
@@ -184,11 +178,10 @@ Decode
 ---
 
 ## [DISKO 1](https://play.picoctf.org/practice/challenge/505?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 Can you find the flag in this disk image?
 Download the disk image here.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Darkraicg492</b> 
@@ -203,12 +196,11 @@ Bài này cho file disko nên mình tưởng là disk forensic ai ngờ hint bà
 ---
 
 ## [Ph4nt0m 1ntrud3r](https://play.picoctf.org/practice/challenge/459?category=4&difficulty=1&page=1)
-:::info
-**Description**
+
 A digital ghost has breached my defenses, and my sensitive data has been stolen! 😱💻 Your mission is to uncover how this phantom intruder infiltrated my system and retrieve the hidden flag.
 To solve this challenge, you'll need to analyze the provided PCAP file and track down the attack method. The attacker has cleverly concealed his moves in well timely manner. Dive into the network traffic, apply the right filters and show off your forensic prowess and unmask the digital intruder!
 Find the PCAP file here Network Traffic PCAP file and try to get the flag.
-:::
+
 <hr>
 <p style="text-align:right; font-style:italic;">
   Author: <b>@Prince Niyonshuti N</b> 

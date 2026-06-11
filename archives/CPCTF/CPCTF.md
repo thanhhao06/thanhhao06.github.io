@@ -2,7 +2,9 @@ author: Azaki
 published: published
 created: 2026-04-18
 description: Top 32
-tags: Challenge, CTF
+tags: Competition, CTF
+
+![[Pasted image 20260611230740.png]]
 
 ![[Pasted image 20260419112505.png]]
 # Forensic

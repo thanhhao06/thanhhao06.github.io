@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= page.title ? page.title + ' - ' + config.title : config.title + ' - Home' %></title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("azaki-theme");
+      const theme = saved || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body data-page="<%= page.__pageType || (page.layout || 'page') %>">
   <%- partial('partial/navbar') %>
   <%- body %>
+  <button class="theme-toggle floating-theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+    <span class="theme-toggle-icon" aria-hidden="true"></span>
+  </button>
   <script src="/app.js"></script>
 </body>
 </html>

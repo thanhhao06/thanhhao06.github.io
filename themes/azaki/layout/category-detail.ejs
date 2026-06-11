@@ -1,0 +1,62 @@
+<% page.__pageType = 'categories'; %>
+<%
+const categoryDefs = [
+  { name: 'CTF Challenge', slug: 'ctf-challenge', aliases: ['ctf challenge', 'challenge'] },
+  { name: 'CTF Competition', slug: 'ctf-competition', aliases: ['ctf competition', 'competition', 'competion', 'compertion'] },
+  { name: 'Theory', slug: 'theory', aliases: ['theory', 'thoery'] }
+];
+const allPosts = site.posts && site.posts.data ? site.posts.data : [];
+const categoryName = page.category_name || page.title;
+function normalizeTerm(value) {
+  return String(value || '')
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+}
+function collectionNames(collection) {
+  if (!collection || !collection.data) return [];
+  return collection.data.map(function(item) { return item.name; });
+}
+function postTerms(post) {
+  return collectionNames(post.categories).concat(collectionNames(post.tags)).map(normalizeTerm);
+}
+function belongsToCategory(post, category) {
+  const terms = postTerms(post);
+  return category.aliases.map(normalizeTerm).some(function(alias) { return terms.includes(alias); });
+}
+const categoryDef = categoryDefs.find(function(category) {
+  return normalizeTerm(category.name) === normalizeTerm(categoryName);
+}) || { name: categoryName, slug: '', aliases: [categoryName] };
+const categoryPosts = allPosts
+  .filter(function(post) { return belongsToCategory(post, categoryDef); })
+  .sort(function(a, b) { return b.date - a.date; });
+%>
+<main class="categories-page category-detail-page page-enter">
+  <section class="categories-hero category-detail-hero">
+    <a class="category-back-link" href="/categories/">&lt; Categories</a>
+    <h1><%= categoryDef.name %></h1>
+    <p><%= categoryPosts.length %> <%= categoryPosts.length === 1 ? 'post' : 'posts' %></p>
+  </section>
+
+  <% if (categoryPosts.length) { %>
+    <section class="categories-list">
+      <section class="category-group category-detail is-visible">
+        <ul class="category-posts">
+          <% categoryPosts.forEach(function(post) { %>
+            <li>
+              <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+              <span class="category-line" aria-hidden="true"></span>
+              <time datetime="<%= date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'MMM D, YYYY') %></time>
+            </li>
+          <% }) %>
+        </ul>
+      </section>
+    </section>
+  <% } else { %>
+    <div class="message-card">
+      <h3>No posts yet</h3>
+      <p>This category has no posts.</p>
+    </div>
+  <% } %>
+</main>

@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupPaginatedGrids();
   setupAboutScrollReveal();
   setupCodeBlocks();
+  setupThemeToggle();
+  setupEntryReveal();
+  setupCategoryDetails();
 
   const tabButtons = Array.from(document.querySelectorAll("[data-tab]"));
   const panels = Array.from(document.querySelectorAll("[data-tab-panel]"));
@@ -40,6 +43,79 @@ document.addEventListener("DOMContentLoaded", () => {
     loadProjectCount(projectCount);
   }
 });
+
+function setupCategoryDetails() {
+  const triggers = Array.from(document.querySelectorAll("[data-category-target]"));
+  const details = Array.from(document.querySelectorAll("[data-category-detail]"));
+  if (!triggers.length || !details.length) return;
+
+  function showCategory(slug, shouldScroll = true) {
+    details.forEach((detail) => {
+      const active = detail.dataset.categoryDetail === slug;
+      detail.hidden = !active;
+      detail.classList.toggle("is-visible", active);
+    });
+
+    triggers.forEach((trigger) => {
+      const active = trigger.dataset.categoryTarget === slug;
+      trigger.classList.toggle("active", active);
+      trigger.setAttribute("aria-current", active ? "true" : "false");
+    });
+
+    const activeDetail = details.find((detail) => detail.dataset.categoryDetail === slug);
+    if (activeDetail && shouldScroll) {
+      activeDetail.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      const slug = trigger.dataset.categoryTarget;
+      history.replaceState(null, "", `#${slug}`);
+      showCategory(slug);
+    });
+  });
+
+  const initial = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if (initial && details.some((detail) => detail.dataset.categoryDetail === initial)) {
+    showCategory(initial, false);
+  }
+}
+
+function setupThemeToggle() {
+  const button = document.querySelector(".theme-toggle");
+  if (!button) return;
+
+  const root = document.documentElement;
+  const icon = button.querySelector(".theme-toggle-icon");
+
+  function apply(theme) {
+    root.dataset.theme = theme;
+    localStorage.setItem("azaki-theme", theme);
+    button.setAttribute("aria-pressed", String(theme === "light"));
+    if (icon) icon.dataset.icon = theme === "light" ? "sun" : "moon";
+  }
+
+  apply(root.dataset.theme || "dark");
+
+  button.addEventListener("click", () => {
+    apply(root.dataset.theme === "light" ? "dark" : "light");
+  });
+}
+
+function setupEntryReveal() {
+  const items = document.querySelectorAll(".page-enter, .reveal-item");
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.target.classList.toggle("is-visible", entry.isIntersecting);
+    });
+  }, { threshold: 0.12 });
+
+  items.forEach((item) => observer.observe(item));
+}
 
 function escapeHtml(value) {
   return String(value || "")
